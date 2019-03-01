@@ -8,7 +8,7 @@ const Photo = (props) => {
                 <img className='photo' src={post.link} alt="car collection"/>
                 <figcaption><p>{post.description}</p></figcaption>
                 <div className="button-container">
-                    <button onClick={()=>{props.removePhoto(post.id)}} className="remove-button">Remove</button>
+                    <button onClick={()=>{props.removePhoto(post.id)}}>Remove</button>
                 </div>
             </figure>
         )

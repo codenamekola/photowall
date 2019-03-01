@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import Title from './Title';
 import PhotoWall from './PhotoWall';
+import AddPhoto from './AddPhoto';
+import {Route} from 'react-router-dom';
 
 class Main extends Component{
     constructor(){
@@ -25,8 +27,15 @@ class Main extends Component{
     render(){
         return(
             <div>
-                <Title title={'PhotoWall'}/>
-                <PhotoWall posts={this.state.posts} removePhoto={this.removePhoto}/>
+                <Route path="/" exact render={()=>(
+                <div>
+                    <Title title={'PhotoWall'}/>
+                    <PhotoWall posts={this.state.posts} removePhoto={this.removePhoto}/>
+                </div>
+                )}/>
+                {/**the next route can do without a render property since its displaying
+                only one component. If there were multiple components then we would use render */}
+                <Route path="/AddPhoto" exact component={AddPhoto}/>
             </div>
         )
     }
