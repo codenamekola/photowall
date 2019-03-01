@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+    font-size: 10px;
+    font-family: 'Montserrat','helvetica';
+}
+
+p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+h1{
+    font-family: 'Pacifico';
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100;
+    margin: 2rem 0;
+    letter-spacing: -7px;
+    color: crimson;
+}
+
+.photogrid{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.figure{
+    flex-basis: calc(33.333% - 4rem);
+    border: 2px solid #d3d3d3;
+    padding: 2rem;
+    flex-grow: 1;
+    margin: 0 2rem 2rem 2rem;
+}
+
+.photo{
+    width: calc(100% + 4rem);
+    margin: -2rem 0 0 -2rem;
+
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.remove-button{
+    flex-basis: 48%;
+    color: red;
+    font-size: 12px;
+    border: 2px solid #f2f2f2;
+    line-height: 2;
+    padding: 5px;
+}
+
+.addIcon{
+    margin: 20px auto;
+    display: table;
+    padding: 40px;
+    background: url() center no-repeat;
+    background-size: contain;
+    border: none;
+}
