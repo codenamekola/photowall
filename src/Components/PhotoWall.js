@@ -8,7 +8,9 @@ const PhotoWall = (props) => {
         <div>
             <Link to="/AddPhoto" className="addIcon">.</Link>
             <div className='photogrid'>
-            {props.posts.map((post,index)=>{
+            {props.posts
+            .sort((x,y)=>{return (y.id - x.id)})//display posts from latest to oldest
+            .map((post,index)=>{
                 return <Photo key={index} post={post} removePhoto={props.removePhoto}/>;
             })}
         </div>

@@ -16,6 +16,13 @@ class Main extends Component{
         }
 
         this.removePhoto = this.removePhoto.bind(this);
+        this.addPhoto = this.addPhoto.bind(this);
+    }
+
+    addPhoto(post){
+        this.setState((state)=>({
+            posts: state.posts.concat([post])
+        }))
     }
 
     removePhoto(id){
@@ -34,8 +41,15 @@ class Main extends Component{
                 </div>
                 )}/>
                 {/**the next route can do without a render property since its displaying
-                only one component. If there were multiple components then we would use render */}
-                <Route path="/AddPhoto" exact component={AddPhoto}/>
+                only one component. If there were multiple components then we would use render.
+                But this cant take props so we revert back to the render atributr */}
+                <Route path="/AddPhoto" exact render={({history})=>(
+                    <AddPhoto addPhoto={(post) => {
+                        this.addPhoto(post);
+                        //route back to home page using history
+                        history.push('/');
+                    }}/>
+                )}/>
             </div>
         )
     }
