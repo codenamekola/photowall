@@ -104,3 +104,7 @@ button:hover{
     cursor: pointer;
     border-color: crimson;
 }
+
+a{
+    text-decoration: none;
+}

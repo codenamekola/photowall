@@ -11,7 +11,7 @@ const PhotoWall = (props) => {
             {props.posts
             .sort((x,y)=>{return (y.id - x.id)})//display posts from latest to oldest
             .map((post,index)=>{
-                return <Photo key={index} post={post} removePhoto={props.removePhoto}/>;
+                return <Photo key={index} post={post} {...props} index={index}/>;
             })}
         </div>
         </div>
@@ -19,8 +19,7 @@ const PhotoWall = (props) => {
 }
 
 PhotoWall.propTypes = {
-    posts: PropTypes.array.isRequired,
-    removePhoto: PropTypes.func.isRequired
+    posts: PropTypes.array.isRequired
 }
 
 export default PhotoWall;

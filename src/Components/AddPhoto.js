@@ -16,13 +16,13 @@ class AddPhoto extends Component{
         }
         //if input values are not null then call addphoto from props
         if(link && description){
-            this.props.addPhoto(post);
+            this.props.addPost(post);
+            this.props.onHistory.push('/');
         }
     }
     render(){
         return(
             <div>
-                <h1>Add your photo link</h1>
                 <div className="form">
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="link" name="link"/>
